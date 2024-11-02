@@ -3,11 +3,11 @@ import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { LoginComponent } from './pages/auth/login/login.component';
 import { RegisterComponent } from './pages/auth/register/register.component';
-import { authGuard } from './auth.guard';
 import { DashboardComponent } from './pages/user/dashboard/dashboard.component';
-import { guestGuard } from './guest.guard';
 import { DepositLogComponent } from './pages/deposit/deposit-log/deposit-log.component';
 import { NewDepositComponent } from './pages/deposit/new-deposit/new-deposit.component';
+import { guestGuard } from './guards/guest.guard';
+import { authGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
