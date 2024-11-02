@@ -1,11 +1,8 @@
 .p-menubar {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  
+
   .p-menubar-root-list {
-    // background-color: red;
-    // display: flex;
-    // width: 100%;
-    // justify-content: end;
+    justify-content: end;
   }
 }

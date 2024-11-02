@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { UserService } from '../../services/user.service';
 
@@ -7,7 +7,8 @@ import { UserService } from '../../services/user.service';
   standalone: true,
   imports: [RouterLink],
   templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.scss'
+  styleUrl: './navbar.component.scss',
+  encapsulation: ViewEncapsulation.None
 })
 export class NavbarComponent implements OnInit {
   user = null;
