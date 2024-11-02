@@ -7,6 +7,7 @@ import { PasswordModule } from 'primeng/password';
 import { Router } from '@angular/router';
 import { UserService } from '../../../user.service';
 import { CardModule } from 'primeng/card'
+import { SetTitle, TitleService } from '../../../title.service';
 
 @Component({
   selector: 'app-login',
@@ -23,6 +24,7 @@ import { CardModule } from 'primeng/card'
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
+@SetTitle("Login")
 export class LoginComponent {
   title = "Login";
   email = '';
@@ -31,7 +33,7 @@ export class LoginComponent {
   router = inject(Router);
   loggingIn: boolean = false;
 
-  constructor(private http: HttpClient, private userService: UserService) { } // Inject HttpClient
+  constructor(private http: HttpClient, private userService: UserService, private titleService: TitleService) { } // Inject HttpClient
 
   onSubmit() {
     const userData = {

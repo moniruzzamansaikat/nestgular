@@ -4,6 +4,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { PasswordModule } from 'primeng/password';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { SetTitle, TitleService } from '../../../title.service';
 // import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -19,12 +20,13 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
   templateUrl: './register.component.html',
   styleUrl: './register.component.scss'
 })
+@SetTitle("Register")
 export class RegisterComponent {
   email = '';
   username = '';
   password = '';
 
-  constructor(private http: HttpClient) { } // Inject HttpClient
+  constructor(private http: HttpClient, private titleService: TitleService) { } // Inject HttpClient
 
   onSubmit() {
     const userData = {
