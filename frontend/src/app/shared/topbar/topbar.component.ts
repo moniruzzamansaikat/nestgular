@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
 import { RippleModule } from 'primeng/ripple';
 import { ButtonModule } from 'primeng/button';
 import { MenuModule } from 'primeng/menu'
-import { UserService } from '../../user.service';
+import { UserService } from '../../services/user.service';
 
 @Component({
     selector: 'topbar',

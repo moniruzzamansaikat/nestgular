@@ -5,9 +5,9 @@ import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
 import { Router } from '@angular/router';
-import { UserService } from '../../../user.service';
+import { UserService } from '../../../services/user.service';
 import { CardModule } from 'primeng/card'
-import { SetTitle, TitleService } from '../../../title.service';
+import { SetTitle, TitleService } from '../../../services/title.service';
 
 @Component({
   selector: 'app-login',

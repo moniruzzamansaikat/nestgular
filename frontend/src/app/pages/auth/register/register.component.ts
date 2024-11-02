@@ -4,7 +4,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { PasswordModule } from 'primeng/password';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { SetTitle, TitleService } from '../../../title.service';
+import { SetTitle, TitleService } from '../../../services/title.service';
 // import { HttpClient } from '@angular/common/http';
 
 @Component({

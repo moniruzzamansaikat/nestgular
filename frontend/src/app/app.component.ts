@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { NavbarComponent } from './shared/navbar/navbar.component';
-import { UserService } from './user.service';
+import { UserService } from './services/user.service';
 import { TopbarComponent } from './shared/topbar/topbar.component';
 
 @Component({
