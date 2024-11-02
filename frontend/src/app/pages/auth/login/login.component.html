@@ -1,0 +1,7 @@
+<form (ngSubmit)="onSubmit()">
+  <input placeholder="email" name="email" type="text" pInputText [(ngModel)]="email" />
+  
+  <p-password placeholder="password" name="password" [(ngModel)]="password" [feedback]="false" />
+
+  <p-button type="submit">Login</p-button>
+</form>

@@ -1,0 +1,11 @@
+Some of the angular UI libraries for making your life easier and to get directly into the point of business part. 
+
+1. PrimeNG
+2. NG-LIGHTNING
+3. ngx-bootstrap
+4. Clarity: enterprise-focused design system
+5. Nebular
+6. taiga-ui
+7. NG-Zorro
+8. Ng Bootstrap
+9. Teradata Covalent UI Platform

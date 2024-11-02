@@ -1,0 +1,19 @@
+.navbar {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: skyblue;
+
+  .menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+
+  a {
+    text-decoration: none;
+  }
+}

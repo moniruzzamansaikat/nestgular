@@ -1,0 +1,25 @@
+<nav class="navbar">
+  <a routerLink="/">Logo</a>
+
+  <div class="menu">
+    <a routerLink="/">Home</a>
+    <a routerLink="/about">
+      About
+    </a>
+    @if(!user) {
+      <a routerLink="/auth/login">
+        Login
+      </a>
+      <a routerLink="/auth/register">
+        Register
+      </a>
+      } @else {
+      <a routerLink="/user/dashboard">
+        Dashboard
+      </a>
+      <a href="#" (click)="logoutUser($event)">
+        Logout
+      </a>
+      }
+  </div>
+</nav>
