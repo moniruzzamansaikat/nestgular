@@ -59,11 +59,13 @@ export class TopbarComponent implements OnInit {
                 items: [
                     {
                         label: 'Deposit Log',
-                        icon: 'pi pi-list'
+                        icon: 'pi pi-list',
+                        command: () => this.router.navigate(['user/deposit/log'])
                     },
                     {
                         label: 'New Deposit',
-                        icon: 'pi pi-plus'
+                        icon: 'pi pi-plus',
+                        command: () => this.router.navigate(['user/deposit/new-deposit'])
                     },
                 ],
                 visible: !!this.user

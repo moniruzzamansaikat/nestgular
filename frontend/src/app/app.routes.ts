@@ -6,6 +6,8 @@ import { RegisterComponent } from './pages/auth/register/register.component';
 import { authGuard } from './auth.guard';
 import { DashboardComponent } from './pages/user/dashboard/dashboard.component';
 import { guestGuard } from './guest.guard';
+import { DepositLogComponent } from './pages/deposit/deposit-log/deposit-log.component';
+import { NewDepositComponent } from './pages/deposit/new-deposit/new-deposit.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -17,6 +19,8 @@ export const routes: Routes = [
     canActivateChild: [authGuard], // Protects all child routes
     children: [
       { path: 'dashboard', component: DashboardComponent },
+      { path: 'deposit/log', component: DepositLogComponent },
+      { path: 'deposit/new-deposit', component: NewDepositComponent },
     ],
   },
 ];
