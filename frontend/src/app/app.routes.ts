@@ -16,6 +16,11 @@ export const routes: Routes = [
   { path: 'auth/register', component: RegisterComponent, canActivate: [guestGuard] },
   {
     path: 'user',
+    redirectTo: 'user/dashboard',
+    pathMatch: 'full'
+  },
+  {
+    path: 'user',
     canActivateChild: [authGuard], // Protects all child routes
     children: [
       { path: 'dashboard', component: DashboardComponent },
