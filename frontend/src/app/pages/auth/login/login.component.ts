@@ -33,7 +33,11 @@ export class LoginComponent {
   router = inject(Router);
   loggingIn: boolean = false;
 
-  constructor(private http: HttpClient, private userService: UserService, private titleService: TitleService) { } // Inject HttpClient
+  constructor(
+    private http: HttpClient, 
+    private userService: UserService, 
+    private titleService: TitleService
+  ) { } // Inject HttpClient
 
   onSubmit() {
     const userData = {
