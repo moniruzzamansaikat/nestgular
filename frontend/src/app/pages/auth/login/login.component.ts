@@ -22,10 +22,10 @@ import { ToastModule } from 'primeng/toast';
     PasswordModule,
     HttpClientModule,
     CardModule,
-    ToastModule, 
+    ToastModule,
   ],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.scss', 
+  styleUrl: './login.component.scss',
 })
 @SetTitle("Login")
 export class LoginComponent {
@@ -62,6 +62,17 @@ export class LoginComponent {
       },
       error: (error) => {
         console.error('Login error:', error);
+
+        const errorMessage = error?.error?.message || 'Login failed. Please try again.';
+
+        this.messageService.add({
+          severity: 'error',
+          summary: 'Login Failed',
+          detail: errorMessage
+        });
+
+        this.password = ''; 
+
       }
     });
   }
