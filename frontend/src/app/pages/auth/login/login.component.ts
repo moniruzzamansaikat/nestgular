@@ -1,21 +1,24 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { Component, inject } from '@angular/core';
+import { Component, inject, ViewEncapsulation } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
 import { Router } from '@angular/router';
 import { UserService } from '../../../user.service';
+import { CardModule } from 'primeng/card'
 
 @Component({
   selector: 'app-login',
   standalone: true,
+  encapsulation: ViewEncapsulation.None,
   imports: [
     FormsModule,
     InputTextModule,
     ButtonModule,
     PasswordModule,
-    HttpClientModule
+    HttpClientModule,
+    CardModule
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
@@ -26,6 +29,7 @@ export class LoginComponent {
   username = '';
   password = '';
   router = inject(Router);
+  loggingIn: boolean = false;
 
   constructor(private http: HttpClient, private userService: UserService) { } // Inject HttpClient
 
@@ -35,7 +39,7 @@ export class LoginComponent {
       password: this.password
     };
 
-    this.http.post('https://nest.monirsaikat.xyz/auth/login', userData).subscribe({
+    this.http.post('http://localhost:3000/auth/login', userData).subscribe({
       next: (response: any) => {
         console.log('User logged in successfully:', response);
         localStorage.setItem('accessToken', response?.accessToken);

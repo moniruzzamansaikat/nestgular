@@ -33,7 +33,7 @@ export class RegisterComponent {
       password: this.password
     };
 
-    this.http.post('https://nest.monirsaikat.xyz/auth/register', userData).subscribe({
+    this.http.post('http://localhost:3000/auth/register', userData).subscribe({
       next: (response) => {
         console.log('User registered successfully:', response);
       },

@@ -1,7 +1,11 @@
-<form (ngSubmit)="onSubmit()">
-  <input placeholder="email" name="email" type="text" pInputText [(ngModel)]="email" />
-  
-  <p-password placeholder="password" name="password" [(ngModel)]="password" [feedback]="false" />
+<div class="login-card">
+  <p-card header="Login to your account" >
+    <form (ngSubmit)="onSubmit()">
+      <input placeholder="email" name="email" type="text" pInputText [(ngModel)]="email" />
 
-  <p-button type="submit">Login</p-button>
-</form>
+      <p-password placeholder="password" name="password" [(ngModel)]="password" [feedback]="false" />
+
+      <p-button [loading]="loggingIn" type="submit">Login</p-button>
+    </form>
+  </p-card>
+</div>
