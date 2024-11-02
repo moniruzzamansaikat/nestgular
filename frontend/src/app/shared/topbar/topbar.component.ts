@@ -51,7 +51,7 @@ export class TopbarComponent implements OnInit {
             {
                 label: 'Home',
                 icon: 'pi pi-home',
-                command: () => this.router.navigate(['/'])
+                routerLink: '/'
             },
             {
                 label: 'Deposit',
@@ -60,12 +60,12 @@ export class TopbarComponent implements OnInit {
                     {
                         label: 'Deposit Log',
                         icon: 'pi pi-list',
-                        command: () => this.router.navigate(['user/deposit/log'])
+                        routerLink: 'user/deposit/log'
                     },
                     {
                         label: 'New Deposit',
                         icon: 'pi pi-plus',
-                        command: () => this.router.navigate(['user/deposit/new-deposit'])
+                        routerLink: 'user/deposit/new-deposit'
                     },
                 ],
                 visible: !!this.user
@@ -88,19 +88,19 @@ export class TopbarComponent implements OnInit {
             {
                 label: 'Login',
                 icon: 'pi pi-lock',
-                command: () => this.router.navigate(['/auth/login']),
+                routerLink: '/auth/login',
                 visible: !this.user
             },
             {
                 label: 'Register',
                 icon: 'pi pi-user',
-                command: () => this.router.navigate(['/auth/register']),
+                routerLink: '/auth/register',
                 visible: !this.user
             },
             {
                 label: 'Dashboard',
                 icon: 'pi pi-home',
-                command: () => this.router.navigate(['/user/dashboard']),
+                routerLink: '/user/dashboard',
                 visible: !!this.user
             },
             {
