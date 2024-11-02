@@ -48,6 +48,8 @@ export class LoginComponent {
         console.log('User logged in successfully:', response);
         this.userService.setUser(response);
         this.router.navigate(['user/dashboard']);
+        this.username = '';
+        this.password = '';
       },
       error: (error) => {
         console.error('Login error:', error);
