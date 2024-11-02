@@ -51,7 +51,11 @@ export class TopbarComponent implements OnInit {
             {
                 label: 'Home',
                 icon: 'pi pi-home',
-                routerLink: '/'
+                routerLink: '/',
+                styleClass: 'active',
+                routerLinkActiveOptions: {
+                    exact: true
+                }
             },
             {
                 label: 'Deposit',
