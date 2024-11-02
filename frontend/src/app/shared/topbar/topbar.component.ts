@@ -1,6 +1,6 @@
 import { Component, inject, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
-import { MenuItem } from 'primeng/api';
+import { MenuItem, MessageService } from 'primeng/api';
 import { MenubarModule } from 'primeng/menubar';
 import { BadgeModule } from 'primeng/badge';
 import { AvatarModule } from 'primeng/avatar';
@@ -37,7 +37,8 @@ export class TopbarComponent implements OnInit {
     user: any = null;
 
     constructor(
-        private userService: UserService
+        private userService: UserService,
+        private  messageService: MessageService
     ) { }
 
     logoutUser() {
@@ -110,7 +111,14 @@ export class TopbarComponent implements OnInit {
             {
                 label: 'Logout',
                 icon: 'pi pi-key',
-                command: () => this.logoutUser(),
+                command: () => {
+                    this.logoutUser();
+                    this.messageService.add({
+                        severity: 'success',
+                        summary: 'Success',
+                        detail: 'You are logged out!'
+                    })
+                },
                 visible: !!this.user
             },
         ];
