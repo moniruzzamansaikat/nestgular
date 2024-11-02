@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SetTitle, TitleService } from '../../../title.service';
 
 @Component({
   selector: 'app-deposit-log',
@@ -7,6 +8,7 @@ import { Component } from '@angular/core';
   templateUrl: './deposit-log.component.html',
   styleUrl: './deposit-log.component.scss'
 })
+@SetTitle("Deposit Log")
 export class DepositLogComponent {
-
+  constructor(private titleService: TitleService) {}
 }
