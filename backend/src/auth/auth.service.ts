@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException, UnauthorizedException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { User } from 'src/users/user.entity';
 import { Repository } from 'typeorm';
@@ -30,11 +30,11 @@ export class AuthService {
     const { email, password } = loginUserDto;
     const user = await this.usersRepository.findOne({ where: { email } });
     if (!user) {
-      throw new Error('Invalid credentials');
+      throw new NotFoundException('Invalid credentials');
     }
     const isPasswordValid = await bcrypt.compare(password, user.password);
     if (!isPasswordValid) {
-      throw new Error('Invalid credentials');
+      throw new UnauthorizedException('Invalid credentials');
     }
 
     const accessToken = this.jwtAuthService.generateToken(user);
