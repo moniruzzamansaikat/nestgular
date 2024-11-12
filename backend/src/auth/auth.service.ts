@@ -26,7 +26,7 @@ export class AuthService {
     return this.usersRepository.save(user);
   }
 
-  async login(loginUserDto: LoginUserDto): Promise<{ accessToken: string }> {
+  async login(loginUserDto: LoginUserDto): Promise<{ accessToken: string, user: User }> {
     const { email, password } = loginUserDto;
     const user = await this.usersRepository.findOne({ where: { email } });
     if (!user) {
@@ -38,7 +38,7 @@ export class AuthService {
     }
 
     const accessToken = this.jwtAuthService.generateToken(user);
-    return { accessToken };
+    return { accessToken, user };
   }
 
 }
