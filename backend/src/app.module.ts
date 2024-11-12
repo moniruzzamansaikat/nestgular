@@ -22,7 +22,7 @@ import { ConfigModule } from '@nestjs/config';
       port: 3306,        
       username: 'root',  
       password: '', 
-      database: 'taste_of_nestjs',
+      database: 'nestgular',
       synchronize: true,
       entities: [__dirname + '/../**/*.entity.js']  
     }),
